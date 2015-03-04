@@ -3,35 +3,45 @@
 <!-- Diseño y desarrollo web -->  
 <!-- http://didesweb.com/-->  
 <!-- Este obra está protegida bajo licencia Creative Commons Attribution --> 
- <html lang="es">
- <head>
- <meta charset="UTF-8">
- <title>Didesweb, llamar a una función con argumentos</title>
- </head>
- <body>
- <script>
-     function mostrar(valorrecibido){
-         for(h=1;h<=3;h++){
-             var contenidoDestino=document.getElementById("element"+h);
-             if(h==valorrecibido){
-             contenidoDestino.style.display="block";
-         }else{
-             contenidoDestino.style.display="none";
-         }
-     }
- }
- </script>
- <input type="button" onclick="javascript:mostrar(1)" value="Mostrar el div 1">
- <input type="button" onclick="javascript:mostrar(2)" value="Mostrar el div 2">
- <input type="button" onclick="javascript:mostrar(3)" value="Mostrar el div 3">
- <div id="element1" style="display:none">
-     Lorem ipsum dolor sit amet, consectetuer adipiscing elit ...
- </div>
- <div id="element2" style="display:none">
-     Aenean commodo ligula eget dolor. Aenean massa.Cum sociis ...
- </div>
- <div id="element3" style="display:none">
-     Nulla consequat massa quis enim. Donec pede justo, fringilla ...
- </div> 
- </body>
- </html> 
+<html lang="es">
+<head>
+	<title>Didesweb, reloj con Javascript</title>
+	<meta charset="utf-8">
+	<style>
+		input{
+			border: none;
+		}
+	</style>
+	<script>
+		function reloj() {
+		//Variables
+		horareal = new Date()
+		hora = horareal.getHours()
+		minuto = horareal.getMinutes()
+		segundo = horareal.getSeconds()
+		//Codigo para evitar que solo se vea un numero en los segundos
+		comprobarsegundo = new String (segundo)
+		if (comprobarsegundo.length == 1)
+		segundo = "0" + segundo
+		//Codigo para evitar que solo se vea un numero en los minutos
+		comprobarminuto = new String (minuto)
+		if (comprobarminuto.length == 1)
+		minuto = "0" + minuto
+		//Codigo para evitar que solo se vea un numero en las horas
+		comprobarhora = new String (hora)
+		if (comprobarhora.length == 1)
+		hora = "0" + hora
+		// Codigo para mostrar el reloj en pantalla
+		verhora = hora + " : " + minuto + " : " + segundo
+		document.reloj_javascript.reloj.value = verhora
+		setTimeout("reloj()",1000)
+		}
+	</script>
+</head>
+<body onload="reloj()">
+	<h1>Didesweb, reloj con Javascript</h1>
+	<form name="reloj_javascript">
+		<input type="text" name="reloj" onfocus="window.document.reloj_javascript.reloj.blur()">
+	</form>
+</body>
+</html>
