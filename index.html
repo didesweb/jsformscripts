@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<!-- Didesweb -->  
+<!-- Diseño y desarrollo web -->  
+<!-- http://didesweb.com/-->  
+<!-- Este obra está protegida bajo licencia Creative Commons Attribution --> 
+ <html lang="es">
+ <head>
+ <meta charset="UTF-8">
+ <title>Didesweb, llamar a una función con argumentos</title>
+ </head>
+ <body>
+ <script>
+     function mostrar(valorrecibido){
+         for(h=1;h<=3;h++){
+             var contenidoDestino=document.getElementById("element"+h);
+             if(h==valorrecibido){
+             contenidoDestino.style.display="block";
+         }else{
+             contenidoDestino.style.display="none";
+         }
+     }
+ }
+ </script>
+ <input type="button" onclick="javascript:mostrar(1)" value="Mostrar el div 1">
+ <input type="button" onclick="javascript:mostrar(2)" value="Mostrar el div 2">
+ <input type="button" onclick="javascript:mostrar(3)" value="Mostrar el div 3">
+ <div id="element1" style="display:none">
+     Lorem ipsum dolor sit amet, consectetuer adipiscing elit ...
+ </div>
+ <div id="element2" style="display:none">
+     Aenean commodo ligula eget dolor. Aenean massa.Cum sociis ...
+ </div>
+ <div id="element3" style="display:none">
+     Nulla consequat massa quis enim. Donec pede justo, fringilla ...
+ </div> 
+ </body>
+ </html> 
